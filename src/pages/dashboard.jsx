@@ -1,0 +1,10 @@
+import React from 'react'
+import "../App.css"
+
+function dashboard() {
+  return (
+    <div><h1>dashboard</h1></div>
+  )
+}
+
+export default dashboard
