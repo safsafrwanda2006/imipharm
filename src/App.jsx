@@ -563,8 +563,8 @@ function App() {
   const updateStatus = async (id, status) => {
     await axios.put(
       `https://imipharm-backend.onrender.com/pharmacies/${id}`,
-      { status },
       { withCredentials: true },
+      { status },
     );
     fetchPharmacies();
   };
@@ -723,8 +723,8 @@ function App() {
     try {
       await axios.post(
         `https://imipharm-backend.onrender.com/pharmacies/${pharmacyId}/messages`,
-        { messageText: defaultMsg },
         { withCredentials: true },
+        { messageText: defaultMsg },
       );
       alert(t("messageSent"));
     } catch (err) {
