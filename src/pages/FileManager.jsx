@@ -40,7 +40,7 @@ function FileManager({ openFile, language = "en" }) {
 
   const fetchFiles = async () => {
     try {
-      const res = await axios.get("http://localhost:8081/files", {
+      const res = await axios.get("https://imipharm.vercel.app/files", {
         withCredentials: true,
       });
       setFiles(Array.isArray(res.data) ? res.data : []);
@@ -58,7 +58,7 @@ function FileManager({ openFile, language = "en" }) {
     if (!window.confirm(t("confirmDel"))) return;
 
     try {
-      const res = await fetch(`http://localhost:8081/files/${id}`, {
+      const res = await fetch(`https://imipharm.vercel.app/files/${id}`, {
         method: "DELETE",
         credentials: "include",
       });
@@ -85,7 +85,7 @@ function FileManager({ openFile, language = "en" }) {
     try {
       setLoading(true);
 
-      await axios.post("http://localhost:8081/upload", formData, {
+      await axios.post("https://imipharm.vercel.app/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
         withCredentials: true,
       });
