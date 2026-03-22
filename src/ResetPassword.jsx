@@ -39,7 +39,7 @@ export default function ResetPassword({ onDone }) {
       setLoading(true);
 
       const r = await axios.post(
-        "http://localhost:8081/reset-password",
+        "https://imipharm.vercel.app/reset-password",
         { token, password },
         { withCredentials: true }
       );
