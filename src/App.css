@@ -3161,3 +3161,38 @@ p {
 .tier-badge.pm-1{
   opacity: .75;
 }
+
+
+
+.drop-zone{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+.upload-button{
+  width: 40px;
+  height: 32px;
+  background-color: #0095cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.upload-button:hover{
+  background-color: #0057ff;
+}
+.upload-button img{
+  height: 20px;
+  width: 20px;
+}
+.refresh-btn{
+  background-color: #0088cc;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+.refresh-btn:hover{
+  color: white;
+  background-color: #0057ff;
+}
