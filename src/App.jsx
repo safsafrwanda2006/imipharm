@@ -80,8 +80,8 @@ function App() {
   const doLogin = async () => {
     const res = await axios.post(
       "https://imipharm-backend.onrender.com/login",
-      { email, password, remember },
       { withCredentials: true },
+      { email, password, remember },
     );
     setUser(res.data.user);
   };
