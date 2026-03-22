@@ -80,7 +80,7 @@ function MedicinesTable({ language = "en" }) {
   const updateStatus = async (id, status) => {
     try {
       await axios.put(
-        `https://imipharm.vercel.app/medicines/${id}`,
+        `https://imipharm-backend.onrender.com/medicines/${id}`,
         { status },
         { withCredentials: true },
       );
@@ -99,7 +99,7 @@ function MedicinesTable({ language = "en" }) {
 
     try {
       const res = await axios.post(
-        "https://imipharm.vercel.app/medicines",
+        "https://imipharm-backend.onrender.com/medicines",
         { medicine_name: medicineName.trim() },
         { withCredentials: true },
       );
@@ -119,7 +119,7 @@ function MedicinesTable({ language = "en" }) {
 
     try {
       setDeletingAll(true);
-      await axios.delete("https://imipharm.vercel.app/medicines", {
+      await axios.delete("https://imipharm-backend.onrender.com/medicines", {
         withCredentials: true,
       });
 
