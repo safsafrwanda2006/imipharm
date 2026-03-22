@@ -20,7 +20,7 @@ body {
   overflow-x: hidden;
 }
 main {
-  background-image: url("icons/background-imipharm.png");
+  background-image: url("/icons/background-imipharm.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
