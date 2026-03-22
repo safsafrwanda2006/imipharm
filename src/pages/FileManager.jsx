@@ -112,7 +112,7 @@ function FileManager({ openFile, language = "en" }) {
     <div className="file-manager-page">
       <h2>{t("title")}</h2>
 
-      <div
+        <div
         className="drop-zone"
         onDrop={onDrop}
         onDragOver={(e) => e.preventDefault()}
@@ -127,12 +127,13 @@ function FileManager({ openFile, language = "en" }) {
           hidden
           onChange={(e) => handleFileUpload(e.target.files?.[0])}
         />
+        <div className="upload-button"><img src="/icons/upload.png" alt="" /></div>
       </div>
 
       <div style={{ marginTop: 10 }}>
-        <button type="button" onClick={fetchFiles}>
+        <a className="refresh-btn" href="/" type="button" onClick={fetchFiles}>
           {t("refresh")}
-        </button>
+        </a>
       </div>
 
       <ul className="files-list">
