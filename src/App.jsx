@@ -1054,7 +1054,7 @@ function App() {
                 e.stopPropagation();
                 setShowSideMenu((prev) => !prev);
               }}
-              onMouseEnter={() => setShowSideMenu(true)}
+              {/* onMouseEnter={() => setShowSideMenu(true)} */}
             >
               <img
                 src={showSideMenu ? "icons/close.png" : "icons/menu.png"}
