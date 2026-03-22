@@ -54,6 +54,7 @@ function App() {
   const [forgotEmail, setForgotEmail] = useState("");
   const [forgotMsg, setForgotMsg] = useState("");
   const [forgotLoading, setForgotLoading] = useState(false);
+  axios.defaults.withCredentials = true;
 
   const params = new URLSearchParams(window.location.search);
   const resetMode = params.get("reset") === "1" && !!params.get("token");
