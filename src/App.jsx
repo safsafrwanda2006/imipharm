@@ -80,8 +80,8 @@ function App() {
   const doLogin = async () => {
     const res = await axios.post(
       "https://imipharm-backend.onrender.com/login",
-      { withCredentials: true },
       { email, password, remember },
+      { withCredentials: true },
     );
     setUser(res.data.user);
   };
@@ -563,8 +563,8 @@ function App() {
   const updateStatus = async (id, status) => {
     await axios.put(
       `https://imipharm-backend.onrender.com/pharmacies/${id}`,
-      { withCredentials: true },
       { status },
+      { withCredentials: true },
     );
     fetchPharmacies();
   };
@@ -723,8 +723,8 @@ function App() {
     try {
       await axios.post(
         `https://imipharm-backend.onrender.com/pharmacies/${pharmacyId}/messages`,
-        { withCredentials: true },
         { messageText: defaultMsg },
+         { withCredentials: true },
       );
       alert(t("messageSent"));
     } catch (err) {
@@ -810,6 +810,7 @@ function App() {
     try {
       const res = await axios.get(
         `https://imipharm-backend.onrender.com/search-medicine-city?q=${searchQuery}&city=${cityName}`,
+        { withCredentials: true },
       );
       setSearchResults(res.data);
       setShowResults(true);
@@ -823,7 +824,9 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://imipharm-backend.onrender.com/cities")
+      .get("https://imipharm-backend.onrender.com/cities",
+          { withCredentials: true },
+          )
       .then((res) => setCities(res.data))
       .catch((err) => console.error(err));
   }, []);
