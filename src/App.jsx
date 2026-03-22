@@ -63,7 +63,7 @@ function App() {
     setMarketError("");
     try {
       const res = await axios.get(
-        `http://localhost:8081/me/market-demand?min=${DEMAND_MIN}&limit=50`,
+        `https://imipharm-backend.onrender.com/me/market-demand?min=${DEMAND_MIN}&limit=50`,
         { withCredentials: true },
       );
       setMarketDemand(res.data || []);
@@ -78,7 +78,7 @@ function App() {
 
   const doLogin = async () => {
     const res = await axios.post(
-      "http://localhost:8081/login",
+      "https://imipharm-backend.onrender.com/login",
       { email, password, remember },
       { withCredentials: true },
     );
@@ -544,7 +544,7 @@ function App() {
   };
   const fetchFeedbacks = async () => {
     try {
-      const res = await axios.get("http://localhost:8081/feedbacks", {
+      const res = await axios.get("https://imipharm-backend.onrender.com/feedbacks", {
         withCredentials: true,
       });
       setfeedbacks(res.data || []);
@@ -561,7 +561,7 @@ function App() {
 
   const updateStatus = async (id, status) => {
     await axios.put(
-      `http://localhost:8081/pharmacies/${id}`,
+      `https://imipharm-backend.onrender.com/pharmacies/${id}`,
       { status },
       { withCredentials: true },
     );
@@ -570,7 +570,7 @@ function App() {
 
   const checkAuth = async () => {
     try {
-      const res = await axios.get("http://localhost:8081/check-auth", {
+      const res = await axios.get("https://imipharm-backend.onrender.com/check-auth", {
         withCredentials: true,
       });
 
@@ -614,7 +614,7 @@ function App() {
 
     try {
       await axios.post(
-        "http://localhost:8081/feedback",
+        "https://imipharm-backend.onrender.com/feedback",
         { feedback: text },
         { withCredentials: true },
       );
@@ -661,7 +661,7 @@ function App() {
 
     setShowLoading(true);
     try {
-      const res = await axios.post("http://localhost:8081/register", payload, {
+      const res = await axios.post("https://imipharm-backend.onrender.com/register", payload, {
         withCredentials: true,
       });
 
@@ -679,7 +679,7 @@ function App() {
   useEffect(() => {
     if (user?.role === "pharmacy") {
       axios
-        .get("http://localhost:8081/me/subscription", { withCredentials: true })
+        .get("https://imipharm-backend.onrender.com/me/subscription", { withCredentials: true })
         .then((res) => setMySub(res.data))
         .catch((err) => console.log(err));
     }
@@ -699,7 +699,7 @@ function App() {
     setMessagesLoading(true);
     setMessagesError("");
     try {
-      const res = await axios.get("http://localhost:8081/me/messages", {
+      const res = await axios.get("https://imipharm-backend.onrender.com/me/messages", {
         withCredentials: true,
       });
       setMessages(res.data || []);
@@ -721,7 +721,7 @@ function App() {
 
     try {
       await axios.post(
-        `http://localhost:8081/pharmacies/${pharmacyId}/messages`,
+        `https://imipharm-backend.onrender.com/pharmacies/${pharmacyId}/messages`,
         { messageText: defaultMsg },
         { withCredentials: true },
       );
@@ -739,7 +739,7 @@ function App() {
   const markMessageRead = async (messageId) => {
     try {
       await axios.patch(
-        `http://localhost:8081/me/messages/${messageId}/read`,
+        `https://imipharm-backend.onrender.com/me/messages/${messageId}/read`,
         {},
         { withCredentials: true },
       );
@@ -754,7 +754,7 @@ function App() {
   const fetchPharmacies = async () => {
     setGettingPharm(true);
     try {
-      const res = await axios.get("http://localhost:8081/pharmacies", {
+      const res = await axios.get("https://imipharm-backend.onrender.com/pharmacies", {
         withCredentials: true,
       });
       setPharmacies(res.data);
@@ -767,7 +767,7 @@ function App() {
 
   const fetchMissingMedicines = async () => {
     try {
-      const res = await axios.get("http://localhost:8081/missing-medicines", {
+      const res = await axios.get("https://imipharm-backend.onrender.com/missing-medicines", {
         withCredentials: true,
       });
       setMissingMedicines(res.data);
@@ -808,7 +808,7 @@ function App() {
 
     try {
       const res = await axios.get(
-        `http://localhost:8081/search-medicine-city?q=${searchQuery}&city=${cityName}`,
+        `https://imipharm-backend.onrender.com/search-medicine-city?q=${searchQuery}&city=${cityName}`,
       );
       setSearchResults(res.data);
       setShowResults(true);
@@ -822,7 +822,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8081/cities")
+      .get("https://imipharm-backend.onrender.com/cities")
       .then((res) => setCities(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -837,7 +837,7 @@ function App() {
     if (!isPharmacy || !hasMissingFeature) return;
 
     axios
-      .get("http://localhost:8081/missing-medicines", { withCredentials: true })
+      .get("https://imipharm-backend.onrender.com/missing-medicines", { withCredentials: true })
       .then((res) => setMissingMedicines(res.data))
       .catch((err) => console.error(err));
   }, [isPharmacy, hasMissingFeature]);
@@ -846,7 +846,7 @@ function App() {
     e.preventDefault();
     setShowLoading(true);
     try {
-      const res = await axios.post("http://localhost:8081/login", loginValue, {
+      const res = await axios.post("https://imipharm-backend.onrender.com/login", loginValue, {
         withCredentials: true,
       });
       if (res.data.Status === "Success") {
@@ -876,7 +876,7 @@ function App() {
 
     try {
       const res = await axios.get(
-        `http://localhost:8081/search-medicine?q=${value}`,
+        `https://imipharm-backend.onrender.com/search-medicine?q=${value}`,
       );
       setSearchResults(res.data);
       setShowResults(true);
@@ -898,7 +898,7 @@ function App() {
 
     try {
       const res = await axios.get(
-        `http://localhost:8081/medicine-suggestions?q=${value}`,
+        `https://imipharm-backend.onrender.com/medicine-suggestions?q=${value}`,
       );
       setSuggestions(res.data);
       setShowSuggestions(true);
@@ -913,7 +913,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8081/check-auth", { withCredentials: true })
+      .get("https://imipharm-backend.onrender.com/check-auth", { withCredentials: true })
       .then((res) => {
         if (res.data.loggedIn) setUser(res.data.user);
       });
@@ -930,7 +930,7 @@ function App() {
 
   function deleteMissingMed(e) {
     e.preventDefault();
-    axios.delete("http://localhost:8081/deletemissing", {
+    axios.delete("https://imipharm-backend.onrender.com/deletemissing", {
       withCredentials: true,
     });
   }
@@ -2122,7 +2122,7 @@ function App() {
                     try {
                       setForgotLoading(true);
                       const r = await axios.post(
-                        "http://localhost:8081/forgot-password",
+                        "https://imipharm-backend.onrender.com/forgot-password",
                         { email: forgotEmail.trim() },
                         { withCredentials: true },
                       );
