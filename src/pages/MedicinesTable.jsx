@@ -65,7 +65,7 @@ function MedicinesTable({ language = "en" }) {
   const fetchMedicines = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("https://imipharm.vercel.app/medicines", {
+      const res = await axios.get("https://imipharm-backend.onrender.com/medicines", {
         withCredentials: true,
       });
       setMedicines(res.data || []);
