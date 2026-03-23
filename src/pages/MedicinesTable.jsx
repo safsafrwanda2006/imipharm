@@ -190,7 +190,7 @@ function MedicinesTable({ language = "en" }) {
                 <button
                   type="button"
                   className="ended-btn"
-                  onClick={() => updateStatus(m.id, "unavailable")}
+                  onClick={() => updateStatus(m.id, "finished")}
                 >
                   {t("outOfStock")}
                 </button>
