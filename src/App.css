@@ -1146,7 +1146,7 @@ p {
   transform: translate(-50%, -50%);
   border-radius: 20px;
   color: black;
-  animation: visability 5s ease-out normal;
+  animation: visability 30s ease-out normal;
 }
 
 .loadinicon {
